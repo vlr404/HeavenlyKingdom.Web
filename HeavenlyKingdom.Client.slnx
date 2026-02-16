@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="HeavenlyKingdom.Client/heavenlykingdom.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
