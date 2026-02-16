@@ -1,0 +1,34 @@
+.QuoteBlock {
+    display: flex;
+    flex-direction: column; /* Складываем элементы в столбик */
+    justify-content: center; /* Центрируем содержимое по ВЕРТИКАЛИ */
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-height: 340px;
+    text-align: center;
+    color: white;
+    font-family: "Droid Serif", serif;
+    padding: 40px 20px;
+}
+
+.QuoteBlock__title {
+    position: relative;
+    margin-bottom: 30px;
+    color: white;
+    font-family: "Droid Serif", serif;
+    font-size: 50px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+    .QuoteBlock__title::after {
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        width: 20px;
+        height: 4px;
+        content: "";
+        transform: translateX(-50%);
+        background-color: #ffffff;
+    }
