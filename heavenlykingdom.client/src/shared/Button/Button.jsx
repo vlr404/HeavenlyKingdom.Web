@@ -1,7 +1,7 @@
 ﻿import { useState } from 'react';
 import './Button.css';
 
-export const Button = ({ title, onClick, variant = 'def', color = '#ef6c00', link }) => {
+export const Button = ({ title,variant = 'def', color = '#ef6c00', link }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     // Функция для определения: светлый цвет или темный
@@ -33,7 +33,6 @@ export const Button = ({ title, onClick, variant = 'def', color = '#ef6c00', lin
                 target="_blank"             /* Открывает в новой вкладке */
                 rel="noopener noreferrer"   /* Защита безопасности */
                 className={`button ${variant === 'lg' ? 'button--lg' : ''}`}
-                onClick={onClick}
                 style={buttonStyle}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
@@ -48,7 +47,6 @@ export const Button = ({ title, onClick, variant = 'def', color = '#ef6c00', lin
     return (
         <button
             className={`button ${variant === 'lg' ? 'button--lg' : ''}`}
-            onClick={onClick}
             style={buttonStyle}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
