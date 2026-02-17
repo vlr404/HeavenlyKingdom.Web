@@ -6,7 +6,6 @@
 
 
 body {
-    padding-top: 100px;
     overflow-x: hidden;
     width: 100%;
     margin: 0;
@@ -30,4 +29,8 @@ button, a {
     max-width: 1200px;
     margin: 0 auto;
 
+}
+
+section {
+    padding-top: 80px;  
 }
