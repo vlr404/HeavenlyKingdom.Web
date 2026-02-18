@@ -10,7 +10,8 @@ import { Benefits } from './shared/Benefits/Benefits.jsx';
 import { DonationBar } from './shared/DonationBar/DonationBar.jsx';
 import { Home } from './widgets/Home/Home.jsx';
 import { About } from './widgets/About/About.jsx';
-import { MediaBlock } from './shared/MediaBlock/MediaBlock.jsx'; 
+import { Events } from './widgets/Events/Events.jsx';
+
 
 function App() {
     return (
@@ -19,8 +20,8 @@ function App() {
             <Header />
             <Home />
             <About />
-            
             <MediaBlock/>
+            <Events />
         </div>
 
 
