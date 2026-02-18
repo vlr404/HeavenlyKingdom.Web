@@ -10,6 +10,7 @@ import { Benefits } from './shared/Benefits/Benefits.jsx';
 import { DonationBar } from './shared/DonationBar/DonationBar.jsx';
 import { Home } from './widgets/Home/Home.jsx';
 import { About } from './widgets/About/About.jsx';
+import { MediaBlock } from './shared/MediaBlock/MediaBlock.jsx'; 
 
 function App() {
     return (
@@ -19,7 +20,7 @@ function App() {
             <Home />
             <About />
             
-
+            <MediaBlock/>
         </div>
 
 
