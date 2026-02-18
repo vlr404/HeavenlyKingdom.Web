@@ -1,0 +1,110 @@
+.media-container {
+    width: 1000px;
+    height: 750px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; /* Чтобы видео не вылезало за границы */
+}
+
+.media-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: #111;
+}
+
+    .media-tabs button {
+        background: none;
+        border: 1px solid #444;
+        color: #888;
+        padding: 8px 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .media-tabs button.active {
+            border-color: orange;
+            color: orange;
+        }
+
+.media-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Сетка 3х3 для церемоний и видео */
+.grid-3x3, .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    height: 100%;
+}
+
+.empty-cell, .video-thumb {
+    background: #333;
+    border: 1px dashed #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    transition: 0.3s;
+}
+
+    .video-thumb:hover {
+        background: #444;
+        cursor: pointer;
+        border-color: orange;
+    }
+
+/* Оверлей для видео */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.close-video {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: orange;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.video-placeholder {
+    width: 80%;
+    height: 60%;
+    background: #222;
+    border: 1px solid orange;
+}
+
+/* Музыкальный блок */
+.music-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.music-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: #222;
+    border-radius: 4px;
+}
