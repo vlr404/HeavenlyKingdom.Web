@@ -2,7 +2,7 @@ import './DonationBar.css';
 import { Button } from '../Button/Button.jsx';
 import { Quote } from '../Quote/Quote.jsx';
 
-export const DonationBar = ({ current, goal, title, text }) => {
+export const DonationBar = ({ current, goal, title, text,valute }) => {
   const progressPercent = Math.min((current / goal) * 100, 100);
 
   return (
@@ -15,7 +15,7 @@ export const DonationBar = ({ current, goal, title, text }) => {
           {/* Блок с целью */}
           <div className="donates-scale__goal">
             <p className="donates-scale__goal__text">НАША ЦЕЛЬ:</p>
-            <p className="donates-scale__goal__sum">{goal.toLocaleString()}</p>
+                      <p className="donates-scale__goal__sum">{goal.toLocaleString()} {valute}</p>
           </div>
 
           {/* Контейнер самой полоски */}

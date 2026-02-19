@@ -1,10 +1,33 @@
-.father-grid {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
+.father-slider-layout {
+    position: relative; /* Оставляем как есть */
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
 }
+
+.father-slider-viewport {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 1090px;
+}
+
+/* Лента, которая едет влево */
+.father-slider-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease-in-out;
+    padding: 10px 0;
+}
+
+    .father-slider-track-cent{
+        justify-content:center;
+    }
+    
+    .father-card {
+        flex-shrink: 0; /* Чтобы карточки не сжимались */
+        width: 250px;
+    }
 
 .father-grid__image {
     overflow: hidden;
@@ -31,11 +54,12 @@
     font-family: "Droid Serif", serif;
     font-size: 17px;
     font-weight: 700;
+    
 }
 
     .father-grid__name::before,
     .father-grid__name::after {
-        width: 5px;
+        width: 15px; 
         height: 1px;
         margin: 0 10px;
         content: "";
@@ -43,10 +67,44 @@
     }
 
 .father-grid__san {
+    display: flex;
     justify-content: center;
     text-align: center;
     color: #ffffff;
     font-family: "Droid Serif", serif;
     font-size: 15px;
     font-weight: 400;
+    margin-top: 5px;
 }
+
+/* Стрелки навигации */
+.slider-arrow {
+    position: absolute;
+    top: 170px; /* Ровно половина высоты фото (340px / 2) */
+    transform: translateY(-50%); /* Идеальный центр */
+    background: none;
+    border: none;
+    color: #ef6c00;
+    font-size: 50px;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    padding: 0 20px;
+}
+
+    .slider-arrow.left {
+        left: -20px; /* Выносим за пределы контента слева */
+    }
+
+    .slider-arrow.right {
+        right: -20px; /* Выносим за пределы контента справа */
+    }
+
+    .slider-arrow:hover {
+        color: #fff;
+    }
+
+    .slider-arrow.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
