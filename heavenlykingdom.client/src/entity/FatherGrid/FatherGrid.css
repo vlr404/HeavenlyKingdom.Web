@@ -30,6 +30,7 @@
     }
 
 .father-grid__image {
+    position: relative;
     overflow: hidden;
     width: 250px;
     height: 340px;
@@ -42,6 +43,55 @@
         object-fit: cover;
         object-position: center;
     }
+
+    /* Создаем слой затемнения через псевдоэлемент */
+    .father-grid__image::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Серый прозрачный слой */
+        opacity: 0; /* Изначально невидим */
+        transition: opacity 0.3s ease; /* Плавное появление */
+        z-index: 5;
+    }
+
+/* Прячем сами иконки */
+.SocialMedia {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%); /* Чуть смещено вниз для эффекта вылета */
+    z-index: 10;
+    opacity: 0; /* Изначально невидимы */
+    visibility: hidden;
+    transition: all 0.4s ease; /* Плавное появление и подъем */
+}
+
+/* --- ЭФФЕКТЫ ПРИ НАВЕДЕНИИ --- */
+
+/* 1. Показываем затемнение */
+.father-card:hover .father-grid__image::after {
+    opacity: 1;
+}
+
+/* 2. Показываем иконки и плавно поднимаем их в центр */
+.father-card:hover .SocialMedia {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%); /* Возвращаем ровно в центр */
+}
+
+/* 3. Опционально: легкое увеличение самой картинки */
+.father-grid__image img {
+    transition: transform 0.5s ease;
+}
+
+.father-card:hover .father-grid__image img {
+    transform: scale(1.05);
+}
 
 .father-grid__name {
     display: flex;

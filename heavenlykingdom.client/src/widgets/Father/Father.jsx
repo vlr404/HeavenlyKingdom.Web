@@ -8,7 +8,7 @@ export const Father = () => {
     return (
         <section id="Father" className="Father">
             <Divider title="Отцы" />
-            <div classname="section-container">
+            <div className="section-container">
                 <Quote text="Пріидите, возрадуемся Господеви, воскликнемъ Богу Спасителю нашему: предваримъ в лице Его во исповѣданіи, и во псалмѣхъ воскликнемъ Ему. Яко Богъ Велій Господь, и Царь Велій по всей земли." />
                 <FatherGrid />
                 <DonationBar current="78560" goal="200000" title="ПОМОГИТЕ НАМ"

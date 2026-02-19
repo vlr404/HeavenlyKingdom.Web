@@ -1,0 +1,38 @@
+.SocialMedia {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    width: 180px;
+}
+
+/* Если иконок ровно 5, можно чуть сузить, чтобы форсировать перенос 3+2 */
+.SocialMedia--five {
+    max-width: 140px;
+}
+
+.SocialMedia__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #EF6C00;
+    border-radius: 3px;
+    color: #EF6C00; /* Цвет иконок */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+    .SocialMedia__icon:hover {
+        background-color: #EF6C00;
+        color: #ffffff; /* При наведении иконка белеет */
+        transform: translateY(-3px);
+    }
+
+   
