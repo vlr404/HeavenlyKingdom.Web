@@ -92,7 +92,7 @@ export const FatherGrid = () => {
                         <div key={father.id} className="father-card">
                             <div className="father-grid__image">
                                 <img src={father.img} alt={father.name} />
-                                <SocialMediaIcon links={father.socials} />
+                                <SocialMediaIcon links={father.socials} wrap="y" />
                             </div>
                             <div className="father-grid__name">ОТЕЦ <br />{father.name}</div>
                             <div className="father-grid__san">{father.san}</div>

@@ -1,7 +1,7 @@
 .QuoteBlock {
     display: flex;
-    flex-direction: column; /* Складываем элементы в столбик */
-    justify-content: center; /* Центрируем содержимое по ВЕРТИКАЛИ */
+    flex-direction: column; 
+    justify-content: center; 
     align-items: center;
     position: relative;
     width: 100%;

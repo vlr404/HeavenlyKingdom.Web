@@ -15,8 +15,8 @@ export const Header = () => {
                         <li><a href="#About">О НАС</a></li>
                         <li><a href="#Father">ОТЦЫ</a></li>
                         <li><a href="#Events">СОБЫТИЯ</a></li>
-                        <li><a href="#ceremony">ЦЕРЕМОНИИ</a></li>
-                        <li><a href="#contacts">КОНТАКТЫ</a></li>
+                        <li><a href="#Ceremony">ЦЕРЕМОНИИ</a></li>
+                        <li><a href="#Contacts">КОНТАКТЫ</a></li>
                         <li><a href="">КАТАЛОГ</a></li>
                     </ul>
                 </nav>

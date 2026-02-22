@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './SocialMediaIcon.css';
 
 // Словарь иконок (живет в коде, не в базе)
@@ -31,17 +31,13 @@ const ICON_MAP = {
     )
 };
 
-export const SocialMediaIcon = ({ links }) => {
-    // links — это объект из базы, например: { instagram: "url", telegram: "url" }
+export const SocialMediaIcon = ({ links, wrap ='def' }) => {
     
-    // Превращаем ключи объекта в массив только активных соцсетей
     const activeSocials = Object.keys(links).filter(key => links[key] && ICON_MAP[key]);
-    
-    // Если соцсетей 5, добавим класс для спец. разметки 3+2
-    const containerClass = activeSocials.length === 5 ? 'SocialMedia SocialMedia--five' : 'SocialMedia';
-
+   
     return (
-        <div className={containerClass}>
+         <div className={`SocialMedia ${wrap === 'y' ? 'SocialMedia--five' : ''}
+        `}>
             {activeSocials.map(type => (
                 <a 
                     key={type} 

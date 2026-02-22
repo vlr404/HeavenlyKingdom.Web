@@ -1,5 +1,5 @@
 .father-slider-layout {
-    position: relative; /* Оставляем как есть */
+    position: relative;
     display: block;
     width: 100%;
     max-width: 1200px;
@@ -12,7 +12,6 @@
     max-width: 1090px;
 }
 
-/* Лента, которая едет влево */
 .father-slider-track {
     display: flex;
     gap: 30px;
@@ -20,14 +19,14 @@
     padding: 10px 0;
 }
 
-    .father-slider-track-cent{
-        justify-content:center;
-    }
-    
-    .father-card {
-        flex-shrink: 0; /* Чтобы карточки не сжимались */
-        width: 250px;
-    }
+.father-slider-track-cent {
+    justify-content: center;
+}
+
+.father-card {
+    flex-shrink: 0;
+    width: 250px;
+}
 
 .father-grid__image {
     position: relative;
@@ -42,9 +41,9 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
+        transition: transform 0.5s ease;
     }
 
-    /* Создаем слой затемнения через псевдоэлемент */
     .father-grid__image::after {
         content: '';
         position: absolute;
@@ -52,41 +51,31 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Серый прозрачный слой */
-        opacity: 0; /* Изначально невидим */
-        transition: opacity 0.3s ease; /* Плавное появление */
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
         z-index: 5;
     }
 
-/* Прячем сами иконки */
-.SocialMedia {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -40%); /* Чуть смещено вниз для эффекта вылета */
-    z-index: 10;
-    opacity: 0; /* Изначально невидимы */
-    visibility: hidden;
-    transition: all 0.4s ease; /* Плавное появление и подъем */
-}
+    .father-grid__image .SocialMedia {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
 
-/* --- ЭФФЕКТЫ ПРИ НАВЕДЕНИИ --- */
-
-/* 1. Показываем затемнение */
 .father-card:hover .father-grid__image::after {
     opacity: 1;
 }
 
-/* 2. Показываем иконки и плавно поднимаем их в центр */
-.father-card:hover .SocialMedia {
+.father-card:hover .father-grid__image .SocialMedia {
     opacity: 1;
     visibility: visible;
-    transform: translate(-50%, -50%); /* Возвращаем ровно в центр */
-}
-
-/* 3. Опционально: легкое увеличение самой картинки */
-.father-grid__image img {
-    transition: transform 0.5s ease;
+    transform: translate(-50%, -50%);
 }
 
 .father-card:hover .father-grid__image img {
@@ -104,12 +93,11 @@
     font-family: "Droid Serif", serif;
     font-size: 17px;
     font-weight: 700;
-    
 }
 
     .father-grid__name::before,
     .father-grid__name::after {
-        width: 15px; 
+        width: 15px;
         height: 1px;
         margin: 0 10px;
         content: "";
@@ -127,11 +115,10 @@
     margin-top: 5px;
 }
 
-/* Стрелки навигации */
 .slider-arrow {
     position: absolute;
-    top: 170px; /* Ровно половина высоты фото (340px / 2) */
-    transform: translateY(-50%); /* Идеальный центр */
+    top: 170px;
+    transform: translateY(-50%);
     background: none;
     border: none;
     color: #ef6c00;
@@ -143,11 +130,11 @@
 }
 
     .slider-arrow.left {
-        left: -20px; /* Выносим за пределы контента слева */
+        left: -20px;
     }
 
     .slider-arrow.right {
-        right: -20px; /* Выносим за пределы контента справа */
+        right: -20px;
     }
 
     .slider-arrow:hover {
