@@ -31,14 +31,21 @@ const ICON_MAP = {
     )
 };
 
-export const SocialMediaIcon = ({ links, wrap ='def' }) => {
+export const SocialMediaIcon = ({ links, wrap }) => {
+    // 1. Считаем только те соцсети, для которых передана ссылка
+    const activeSocialKeys = Object.keys(links).filter(key => 
+        links[key] && links[key].trim() !== "" && ICON_MAP[key]
+    );
     
-    const activeSocials = Object.keys(links).filter(key => links[key] && ICON_MAP[key]);
-   
+    const count = activeSocialKeys.length;
+
+    // 2. Если wrap="y" и иконок больше 4, добавляем класс SocialMedia--five
+    const isFiveWrap = wrap === "y" && count > 4;
+    const containerClass = `SocialMedia ${isFiveWrap ? 'SocialMedia--five' : ''}`;
+
     return (
-         <div className={`SocialMedia ${wrap === 'y' ? 'SocialMedia--five' : ''}
-        `}>
-            {activeSocials.map(type => (
+        <div className={containerClass}>
+            {activeSocialKeys.map(type => (
                 <a 
                     key={type} 
                     href={links[type]} 

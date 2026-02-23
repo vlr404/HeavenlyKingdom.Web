@@ -19,7 +19,7 @@ function App() {
             <Father />
             <Events />
             <Ceremony />
-            <Contacts/>
+            <Contacts />
         </div>
 
 
